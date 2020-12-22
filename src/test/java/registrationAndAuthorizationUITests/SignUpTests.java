@@ -36,7 +36,7 @@ public class SignUpTests {
 
     // Registration with all valid data
     @Test
-    public void validRegistrationTest(){
+    public void validRegistrationTest() throws InterruptedException {
 
 
         WebElement fullName = driver.findElement(By.name("username"));
@@ -53,7 +53,7 @@ public class SignUpTests {
 
         WebElement register = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         register.click();
-
+        Thread.sleep(1000);
         WebElement emailSignIn = driver.findElement(By.name("email"));
         emailSignIn.sendKeys("hryhorii@ukr.net");
 
@@ -62,7 +62,7 @@ public class SignUpTests {
 
         WebElement login = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         login.click();
-
+        Thread.sleep(1000);
 
         String expectedURL = "http://34.222.107.139/dashboard";
         String actualURL = driver.getCurrentUrl();

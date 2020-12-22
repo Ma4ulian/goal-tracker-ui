@@ -37,7 +37,7 @@ public class SignInTests {
     }
     // Sign in with all valid data
     @Test
-    public void validSignInTest() {
+    public void validSignInTest() throws InterruptedException {
         WebElement signIn = driver.findElement(By.xpath("//a[contains(@href,'/signin')]"));
         signIn.click();
 
@@ -49,7 +49,7 @@ public class SignInTests {
 
         WebElement login = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         login.click();
-
+        Thread.sleep(1000);
         String expectedURL = "http://34.222.107.139/dashboard";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(actualURL, expectedURL);
