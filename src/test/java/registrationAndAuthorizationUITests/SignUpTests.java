@@ -1,4 +1,4 @@
-package registrationAndAuthorization;
+package registrationAndAuthorizationUITests;
 //TestNG Todo : Sample App
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
@@ -43,16 +43,26 @@ public class SignUpTests {
         fullName.sendKeys("TestName");
 
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("test.reactapp@gmail.com");
+        email.sendKeys("hryhorii@ukr.net");
 
         WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("Test@12345");
+        password.sendKeys("hryhorii");
 
         WebElement confirmPassword = driver.findElement(By.name("password2"));
-        confirmPassword.sendKeys("Test@12345");
+        confirmPassword.sendKeys("hryhorii");
 
         WebElement register = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         register.click();
+
+        WebElement emailSignIn = driver.findElement(By.name("email"));
+        emailSignIn.sendKeys("hryhorii@ukr.net");
+
+        WebElement passwordSignIn = driver.findElement(By.name("password"));
+        passwordSignIn.sendKeys("hryhorii");
+
+        WebElement login = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
+        login.click();
+
 
         String expectedURL = "http://34.222.107.139/dashboard";
         String actualURL = driver.getCurrentUrl();
@@ -70,7 +80,7 @@ public class SignUpTests {
         fullName.sendKeys("");
 
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("test2.reactapp@gmail.com");
+        email.sendKeys("test12.reactapp@gmail.com");
 
         WebElement password = driver.findElement(By.name("password"));
         password.sendKeys("Test@12345");
@@ -128,7 +138,7 @@ public class SignUpTests {
         fullName.sendKeys("TestName");
 
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("test3.reactapp@gmail.com");
+        email.sendKeys("test13.reactapp@gmail.com");
 
         WebElement password = driver.findElement(By.name("password"));
         password.sendKeys("");

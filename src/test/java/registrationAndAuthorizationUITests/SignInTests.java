@@ -1,4 +1,4 @@
-package registrationAndAuthorization;
+package registrationAndAuthorizationUITests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,10 +42,10 @@ public class SignInTests {
         signIn.click();
 
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("test.reactapp@gmail.com");
+        email.sendKeys("hryhorii@ukr.net");
 
         WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("Test@12345");
+        password.sendKeys("hryhorii");
 
         WebElement login = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         login.click();
@@ -95,9 +95,9 @@ public class SignInTests {
         WebElement register = driver.findElement(By.xpath("//button[contains(@class,'login-btn')]"));
         register.click();
 
-        String expectedErrorMsg = "Password is required";
+        String expectedErrorMsg = "Must have at least 6 characters";
 
-        WebElement exp = driver.findElement(By.xpath("//p[contains(text(),'Password is required')]"));
+        WebElement exp = driver.findElement(By.xpath("//p[contains(text(),'Must have at least 6 characters')]"));
         String actualErrorMsg = exp.getText();
 
         Assert.assertEquals(actualErrorMsg, expectedErrorMsg);
